@@ -41,17 +41,6 @@
     cursor: pointer;
 }
 
-.go-back {
-    position: absolute;
-    left: 10px; /* Отступ слева */
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-bottom: 35px;
-    background-color: rgb(245, 245, 245);
-    border-radius: 50%;
-    border: none;
-}
 .user-menu {
     display: none; /* скрываем меню по умолчанию */
     position: absolute;
@@ -62,17 +51,17 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 120px;
+    text-align: center;
     z-index: 1000;
 }
 
 .menu-button {
     display: block;
-    padding: 8px 12px; /* уменьшенные отступы по вертикали и горизонтали */
+    padding: 10px;
     color: #333;
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
-    height: 25px;
 }
 
     .menu-button:hover {
@@ -81,7 +70,6 @@
 
 .logo {
     margin-right: 1300px;
-    margin-left: 20px;
 }
 
 /* Стили для основного контейнера уроков */

@@ -1,0 +1,97 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding-left:150px;
+}
+
+.container {
+    text-align: center;
+    width: 85%;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    color: #4b2e83;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 30px; /* Add space between rows and columns */
+}
+
+td {
+    padding: 20px;
+    text-align: center;
+}
+
+.first-column {
+    border-radius: 12px; /* Rounded corners for the first column */
+    height: 3px;
+    font-size: 21px;
+}
+
+.button-box {
+    cursor: pointer;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 12px; /* Round corners for all boxes */
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+    .button-box:hover {
+        background-color: #e0e0e0;
+    }
+
+span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Row colors - apply the background color to the entire row */
+.row1 td {
+    background-color: #4b2e83;
+    color: white;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+.row2 td {
+    background-color: #7f55b6;
+    color: white;
+}
+
+.row3 td {
+    background-color: #a8e14a;
+    color: #4b2e83;
+}
+
+/* Ensure vertical text in button boxes */
+.button-box br {
+    display: block;
+}
+
+.check-knowledge-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #4b2e83;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .check-knowledge-btn:hover {
+        background-color: #6a3ea5;
+    }
