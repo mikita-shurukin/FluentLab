@@ -8,5 +8,10 @@ namespace FluentLab.Controllers
         {
             return View();
         }
+        
+        public IActionResult FutureSimple()
+        {
+            return View();
+        }
     }
 }
