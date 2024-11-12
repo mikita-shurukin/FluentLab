@@ -1,4 +1,6 @@
-﻿body {
+﻿
+
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -95,3 +97,5 @@ span {
     .check-knowledge-btn:hover {
         background-color: #6a3ea5;
     }
+
+
