@@ -1,0 +1,123 @@
+﻿@model FluentLab.Models.Test
+<link rel="stylesheet" href="/css/learn-grammar/test.css">
+<h1>@Model.Name</h1>
+
+<form asp-action="SubmitTest" method="post" id="testForm">
+    <input type="hidden" name="testId" value="@Model.TestId" />
+
+    @foreach (var question in Model.Questions)
+    {
+        <div class="question-container">
+            <p class="question-text">@question.Text</p>
+
+            @foreach (var answer in question.Answers)
+            {
+                <label class="answer-option">
+                    <input type="checkbox" name="answers" value="@answer.AnswerId" />
+                    @answer.Text
+                </label>
+            }
+        </div>
+    }
+
+    <button type="submit" class="submit-btn">Submit Test</button>
+</form>
+
+<div id="resultModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Test Results</h2>
+        <p id="resultMessage"></p>
+        <p>Correct Answers: <span id="correctAnswers"></span> / <span id="totalQuestions"></span></p>
+        <p>Percentage: <span id="percentage"></span>%</p>
+    </div>
+</div>
+
+<script>
+    // Открытие модального окна с результатами
+    function showResults(correctAnswers, totalQuestions, percentage) {
+        document.getElementById("correctAnswers").textContent = correctAnswers;
+        document.getElementById("totalQuestions").textContent = totalQuestions;
+        document.getElementById("percentage").textContent = percentage.toFixed(2);
+
+        var resultMessage = percentage >= 60 ? "Congratulations! You passed the test." : "Unfortunately, you didn't pass the test.";
+        document.getElementById("resultMessage").textContent = resultMessage;
+
+        var modal = document.getElementById("resultModal");
+        modal.style.display = "block";
+    }
+
+    // Закрытие модального окна
+    document.getElementById("closeModal").onclick = function () {
+        var modal = document.getElementById("resultModal");
+        modal.style.display = "none";
+    }
+
+    // Закрытие модального окна при клике за пределами модала
+    window.onclick = function (event) {
+        var modal = document.getElementById("resultModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Отправка формы через AJAX
+    document.getElementById("testForm").onsubmit = function (event) {
+        event.preventDefault();
+
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+            .then(response => response.json()) // Даем ответ в JSON
+            .then(data => {
+                // Показать результаты в модальном окне
+                showResults(data.correctAnswers, data.totalQuestions, data.percentage);
+            })
+            .catch(error => {
+                console.error("Error submitting form:", error);
+            });
+    }
+</script>
+
+<style>
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+</style>

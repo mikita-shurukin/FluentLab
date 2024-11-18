@@ -1,0 +1,45 @@
+﻿@* @model List<Question>
+
+<link rel="stylesheet" href="/css/learn-grammar/test.css">
+
+<div class="container">
+    @{
+        var questionNumber = 1;
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var question in Model)
+        {
+            <div class="question">
+                <p class="question-text">
+                    <span class="question-number">@questionNumber.</span> @question.QuestionText
+                </p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="question-@questionNumber" value="1">
+                        <span>@question.Option1</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="question-@questionNumber" value="2">
+                        <span>@question.Option2</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="question-@questionNumber" value="3">
+                        <span>@question.Option3</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="question-@questionNumber" value="4">
+                        <span>@question.Option4</span>
+                    </label>
+                </div>
+            </div>
+            questionNumber++;
+        }
+    }
+    else
+    {
+        <p>No questions available.</p>
+    }
+</div>
+ *@

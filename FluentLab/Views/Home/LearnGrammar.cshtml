@@ -31,10 +31,8 @@
                 <div class="user">
                     <img src="../images/user.png" class="icon" alt="User Icon" onclick="toggleMenu()">
                     <div id="user-menu" class="user-menu">
-                        <!-- Если пользователь не авторизован, показываем Login и Register -->
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <!-- Если авторизован, показываем Logout -->
                             <a asp-controller="Account" asp-action="Logout" class="menu-button">Logout</a>
                         }
                         else

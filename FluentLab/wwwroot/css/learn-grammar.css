@@ -15,16 +15,16 @@
 }
 
 .header-line {
-    padding: 10px;
+    padding: 2px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(206, 206, 206, 0.1); /* Черный с 50% прозрачностью */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1)
+    background-color: rgba(206, 206, 206, 0.1); 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .user {
-    position: relative; /* для позиционирования меню относительно иконки */
+    position: relative; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,9 +42,9 @@
 }
 
 .user-menu {
-    display: none; /* скрываем меню по умолчанию */
+    display: none;
     position: absolute;
-    top: 50px; /* чтобы меню было под иконкой */
+    top: 50px; 
     right: 0;
     background-color: white;
     border: 1px solid #ddd;
@@ -72,38 +72,20 @@
     margin-right: 1300px;
 }
 
-/* Стили для основного контейнера уроков */
 .lessons-holder {
     flex: 1;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Автоматически добавляет столбцы */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    padding: 20px 40px; /* Внешние отступы для симметрии */
-    box-sizing: border-box; /* Чтобы паддинги не влияли на ширину */
+    padding: 20px 40px;
+    box-sizing: border-box;
 }
-
-/* Стили для карточек уроков */
 .lesson {
     display: flex;
     justify-content: center;
 }
 
-/*.lesson-block {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(193, 191, 191, 0.2);
-    backdrop-filter: blur(6px);
-    text-align: center;
-}*/
 
 .lesson-title {
     font-size: 20px;
