@@ -7,6 +7,6 @@ namespace FluentLab.ViewsModels
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress]
         public string Email { get; set; }
-        public string test { get; set; }
+        public string test2 { get; set; }
     }
 }
